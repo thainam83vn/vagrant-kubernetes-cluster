@@ -1,0 +1,4 @@
+nginx-54f57cf6bf-9crk4   0/1     Pending   0          4m12s
+nginx-54f57cf6bf-l4bn9   0/1     Pending   0          4m12s
+nginx-54f57cf6bf-pnh5n   0/1     Pending   0          4m12s
+nginx-54f57cf6bf-znr2z   0/1     Pending   0          4m12s

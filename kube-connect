@@ -1,0 +1,1 @@
+kubeadm join 192.168.2.227:6443 --token mob7x9.mqs0v9i0h7dvt69l --discovery-token-ca-cert-hash sha256:93645d131a38d249cded5acd48a7750203ad7957dc3e10223f2c4ca400e537be

@@ -5,14 +5,10 @@ Vagrant.configure("2") do |config|
     v.memory = 2048
     v.cpus = 2
   end
-  config.vm.define "slave1" do |slave1|
-    slave1.vm.hostname = "slave1"
+  (1..1).each do |i|
+    config.vm.define "slave#{i}" do |node|
+      node.vm.hostname = "slave#{i}"
+    end
   end
-  config.vm.define "slave2" do |slave2|
-    slave2.vm.hostname = "slave2"
-  end
-  config.vm.define "slave3" do |slave3|
-    slave3.vm.hostname = "slave3"
-  end  
   config.vm.provision :shell, path: "bootstrap.sh"
 end

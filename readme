@@ -1,0 +1,7 @@
+Steps
+    vagrant up
+    vagrant port kmaster
+    scp -P 2222 vagrant@127.0.0.1:/home/vagrant/.kube/config ~/.kube/config
+    kubectl apply -f deployment.yml
+    kubectl apply -f services.yml
+    kubectl port-forward service/my-service 80:80

@@ -9,6 +9,5 @@ kubeadm reset -f
 echo "Joining Kubernete"
 hostname
 swapoff -a
-kubeadm join 192.168.2.227:6443 --token b2pud5.r9f6ed6tsl8p9np5 --discovery-token-ca-cert-hash sha256:bac98ae8311149666eb511472215b45cf9d1fbd3d2866b4083317b640b11786d 
-
+kubeadm join 192.168.2.227:6443 --token neslbs.yars2oqeedtzsy1w --discovery-token-ca-cert-hash sha256:c8f42c63ffe6597d0b71678f1b89a7ff70ccf83ecd615ba7e5b4e5b498fce518 
 

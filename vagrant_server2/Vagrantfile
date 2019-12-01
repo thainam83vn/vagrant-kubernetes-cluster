@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  config.vm.provision "shell", path: "bootstrap.sh"
+
+  NodeCount = 2
+
+  # Kubernetes Worker Nodes
+  (1..NodeCount).each do |i|
+    config.vm.define "kworker2#{i}" do |workernode|
+      workernode.vm.box = "centos/7"
+      workernode.vm.hostname = "kworker2#{i}.example.com"
+      workernode.vm.network "public_network", ip: "192.168.2.12#{i}"
+      workernode.vm.provider "virtualbox" do |v|
+        v.name = "kworker2#{i}"
+        v.memory = 2048
+        v.cpus = 2
+      end
+      workernode.vm.provision "shell", path: "bootstrap_kworker.sh"
+    end
+  end
+
+end
